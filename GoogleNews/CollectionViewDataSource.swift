@@ -13,30 +13,20 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        return network.news.count
     }
-    
      
-    
-      func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 4
-    }
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        
-        cell.newsHeadline.text = network.news[0].title
-        cell.newsText.text = network.news[0].content
-        cell.newsImageView.image = UIImage(systemName: "square.and.pencil")
+    
+        cell.newsHeadline.text = network.news[indexPath.row].title
+        cell.newsText.text = network.news[indexPath.row].content
+        cell.source.text = network.news[indexPath.row].source.name
+        cell.newsImageView.loadImageUsingCache(withUrl: network.news[indexPath.row].urlToImage ?? "")
         
         return cell
-        
     }
-    
-    
-    
-    
+     
 }
 

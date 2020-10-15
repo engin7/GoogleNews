@@ -35,19 +35,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1mv-HV-Ek5">
-                                                    <rect key="frame" x="0.0" y="8" width="296" height="117"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="296" height="130"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="117" id="pVa-MG-KX2"/>
+                                                        <constraint firstAttribute="height" constant="130" id="pVa-MG-KX2"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsText" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25V-I7-K0S">
-                                                    <rect key="frame" x="0.0" y="197" width="296" height="52"/>
+                                                    <rect key="frame" x="0.0" y="192" width="296" height="49"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="les pratiques agricoles  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vad-wB-MP7">
-                                                    <rect key="frame" x="16" y="139" width="264" height="44"/>
+                                                    <rect key="frame" x="16" y="144" width="264" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="lC0-b2-inF"/>
                                                     </constraints>
@@ -55,18 +55,28 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcf-OT-GaS">
+                                                    <rect key="frame" x="257" y="241" width="31" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="vad-wB-MP7" secondAttribute="trailing" constant="16" id="0zZ-mn-zAm"/>
+                                                <constraint firstItem="jcf-OT-GaS" firstAttribute="top" secondItem="25V-I7-K0S" secondAttribute="bottom" id="4ik-5D-RJJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="1mv-HV-Ek5" secondAttribute="trailing" id="6Qb-hO-5N3"/>
+                                                <constraint firstItem="jcf-OT-GaS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nld-me-eYo" secondAttribute="leading" constant="20" symbolic="YES" id="Fas-8A-m9g"/>
                                                 <constraint firstItem="vad-wB-MP7" firstAttribute="top" secondItem="1mv-HV-Ek5" secondAttribute="bottom" constant="14" id="N17-kT-cbh"/>
                                                 <constraint firstItem="25V-I7-K0S" firstAttribute="trailing" secondItem="1mv-HV-Ek5" secondAttribute="trailing" id="P70-Zu-IVe"/>
-                                                <constraint firstAttribute="bottom" secondItem="25V-I7-K0S" secondAttribute="bottom" constant="8" id="WG3-qI-3IL"/>
-                                                <constraint firstItem="1mv-HV-Ek5" firstAttribute="top" secondItem="Nld-me-eYo" secondAttribute="top" constant="8" id="c77-1e-TLA"/>
+                                                <constraint firstAttribute="trailing" secondItem="jcf-OT-GaS" secondAttribute="trailing" constant="8" id="QcL-8h-FSI"/>
+                                                <constraint firstAttribute="bottom" secondItem="25V-I7-K0S" secondAttribute="bottom" constant="16" id="WG3-qI-3IL"/>
+                                                <constraint firstItem="1mv-HV-Ek5" firstAttribute="top" secondItem="Nld-me-eYo" secondAttribute="top" id="c77-1e-TLA"/>
+                                                <constraint firstAttribute="bottom" secondItem="jcf-OT-GaS" secondAttribute="bottom" id="jqm-2m-HJv"/>
                                                 <constraint firstItem="vad-wB-MP7" firstAttribute="leading" secondItem="Nld-me-eYo" secondAttribute="leading" constant="16" id="rDb-MB-mxv"/>
                                                 <constraint firstItem="25V-I7-K0S" firstAttribute="leading" secondItem="1mv-HV-Ek5" secondAttribute="leading" id="wdf-SN-HBb"/>
                                                 <constraint firstItem="1mv-HV-Ek5" firstAttribute="leading" secondItem="Nld-me-eYo" secondAttribute="leading" id="xfI-bA-Mc0"/>
-                                                <constraint firstItem="25V-I7-K0S" firstAttribute="top" secondItem="vad-wB-MP7" secondAttribute="bottom" constant="14" id="yKS-s0-cfW"/>
+                                                <constraint firstItem="25V-I7-K0S" firstAttribute="top" secondItem="vad-wB-MP7" secondAttribute="bottom" constant="4" id="yKS-s0-cfW"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="296" height="257"/>
@@ -74,6 +84,7 @@
                                             <outlet property="newsHeadline" destination="vad-wB-MP7" id="HHl-wL-neI"/>
                                             <outlet property="newsImageView" destination="1mv-HV-Ek5" id="qF7-RN-1AT"/>
                                             <outlet property="newsText" destination="25V-I7-K0S" id="hAH-0l-a4J"/>
+                                            <outlet property="source" destination="jcf-OT-GaS" id="9Yz-uZ-kMA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

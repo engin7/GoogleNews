@@ -18,6 +18,7 @@
 		1032B45025384DE100D461AF /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B44F25384DE100D461AF /* NetworkLayer.swift */; };
 		1032B4542538538700D461AF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B4532538538700D461AF /* Model.swift */; };
 		1032B45B2538B68700D461AF /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1032B45A2538B68700D461AF /* keys.plist */; };
+		1032B45E2538BF7800D461AF /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B45D2538BF7800D461AF /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1032B44F25384DE100D461AF /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		1032B4532538538700D461AF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1032B45A2538B68700D461AF /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		1032B45D2538BF7800D461AF /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				1032B431253771B000D461AF /* AppDelegate.swift */,
 				1032B433253771B000D461AF /* SceneDelegate.swift */,
 				1032B44F25384DE100D461AF /* NetworkLayer.swift */,
+				1032B45D2538BF7800D461AF /* UIImageViewExtension.swift */,
 				1032B4532538538700D461AF /* Model.swift */,
 				1032B4462537792900D461AF /* CollectionViewController.swift */,
 				1032B449253779AB00D461AF /* CollectionViewDataSource.swift */,
@@ -159,6 +162,7 @@
 				1032B4472537792900D461AF /* CollectionViewController.swift in Sources */,
 				1032B432253771B000D461AF /* AppDelegate.swift in Sources */,
 				1032B434253771B000D461AF /* SceneDelegate.swift in Sources */,
+				1032B45E2538BF7800D461AF /* UIImageViewExtension.swift in Sources */,
 				1032B44A253779AB00D461AF /* CollectionViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

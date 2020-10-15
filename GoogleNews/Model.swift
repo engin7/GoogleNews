@@ -14,21 +14,20 @@ struct Root:  Codable {
 struct News: Codable {
     
     let source : Source
-    var author         = ""
-    var title          = ""
-    var image          = ""
-    var description    = ""
-    var url            = ""
-    var urlToImage     = ""
-    var publishedAt    = ""
-    var content        = ""
-    
+    var title          : String?
+    var url            : String?
+    var publishedAt    : String?
+    var author         : String?
+    var description    : String?
+    var content        : String?
+    var urlToImage     : String?
+
 //    enum CodingKeys: String, CodingKey {
 //      // API keywords clear enough no need to use CodingKeys
 //    }
     
     struct Source: Codable {
-        var id = 0
+        var id: String?
         var name = ""
     }
 }
