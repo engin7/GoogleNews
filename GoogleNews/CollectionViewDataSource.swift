@@ -9,6 +9,8 @@ import UIKit
 
 class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
+    private let network = NetworkManager.shared
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         1
@@ -25,8 +27,8 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
-        cell.newsHeadline.text = "Follow the White rabbit. Beggers are not chosers. Mike Tyson"
-        cell.newsText.text = " les pratiques agricoles respectueuses de l'envi  agricoles respectueuses les pratiques agricoles respectueuses ds nintendon sony happy customer"
+        cell.newsHeadline.text = network.news[0].title
+        cell.newsText.text = network.news[0].content
         cell.newsImageView.image = UIImage(systemName: "square.and.pencil")
         
         return cell

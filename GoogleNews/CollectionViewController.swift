@@ -12,15 +12,43 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var CollectionView: UICollectionView!
     private let collectionViewDataSource = CollectionViewDataSource()
-
+    private let network = NetworkManager.shared
      
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Google News"
         CollectionView.dataSource = collectionViewDataSource
-
+        getHeadlines()
+    }
+    
+    
+    func getHeadlines() {
+        network.getHeadlines(completion: {success in
+            if !success {
+                self.showNetworkError()
+            } else {
+                self.CollectionView.reloadData()
+            }
+        })
+    }
+    
+ 
+    // MARK:- Helper Methods
+    
+    func showNetworkError() {
+        let alert = UIAlertController(title: "Sorry...", message: "Error occured connecting the Server. Please check your connection and try again.", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Retry", style: .default, handler: {
+        (UIAlertAction) in
+            self.getHeadlines()
+        })
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
  
+}
+
     // MARK: UICollectionViewDelegate
  
     
@@ -53,8 +81,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     }
     */
 
-}
-
+ 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

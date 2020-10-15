@@ -14,24 +14,18 @@ struct Root:  Codable {
 struct News: Codable {
     
     let source : Source
-    var name           = ""
-    var longName       = ""
+    var author         = ""
+    var title          = ""
     var image          = ""
-    var totalService   = 0
-    var id             = 0
-    var serviceId      = 0
-    var rating: Float?
-    var jobsDone: Int?
+    var description    = ""
+    var url            = ""
+    var urlToImage     = ""
+    var publishedAt    = ""
+    var content        = ""
     
-    enum CodingKeys: String, CodingKey {
-        case totalService = "pro_count"
-        case image = "image_url"
-        case serviceId = "service_id"
-        case longName = "long_name"
-        case rating = "average_rating"
-        case jobsDone = "completed_jobs_on_last_month"
-        case id, name, source
-    }
+//    enum CodingKeys: String, CodingKey {
+//      // API keywords clear enough no need to use CodingKeys
+//    }
     
     struct Source: Codable {
         var id = 0
