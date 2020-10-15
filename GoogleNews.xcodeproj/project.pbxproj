@@ -15,6 +15,9 @@
 		1032B4472537792900D461AF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B4462537792900D461AF /* CollectionViewController.swift */; };
 		1032B44A253779AB00D461AF /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B449253779AB00D461AF /* CollectionViewDataSource.swift */; };
 		1032B44D253786BD00D461AF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B44C253786BD00D461AF /* CollectionViewCell.swift */; };
+		1032B45025384DE100D461AF /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B44F25384DE100D461AF /* NetworkLayer.swift */; };
+		1032B4542538538700D461AF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B4532538538700D461AF /* Model.swift */; };
+		1032B4572538B22200D461AF /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1032B4562538B22200D461AF /* keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		1032B4462537792900D461AF /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		1032B449253779AB00D461AF /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		1032B44C253786BD00D461AF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1032B44F25384DE100D461AF /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		1032B4532538538700D461AF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1032B4562538B22200D461AF /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,8 @@
 			children = (
 				1032B431253771B000D461AF /* AppDelegate.swift */,
 				1032B433253771B000D461AF /* SceneDelegate.swift */,
+				1032B44F25384DE100D461AF /* NetworkLayer.swift */,
+				1032B4532538538700D461AF /* Model.swift */,
 				1032B4462537792900D461AF /* CollectionViewController.swift */,
 				1032B449253779AB00D461AF /* CollectionViewDataSource.swift */,
 				1032B44C253786BD00D461AF /* CollectionViewCell.swift */,
@@ -69,6 +77,7 @@
 				1032B43A253771B500D461AF /* Assets.xcassets */,
 				1032B43C253771B500D461AF /* LaunchScreen.storyboard */,
 				1032B43F253771B500D461AF /* Info.plist */,
+				1032B4562538B22200D461AF /* keys.plist */,
 			);
 			path = GoogleNews;
 			sourceTree = "<group>";
@@ -130,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1032B4572538B22200D461AF /* keys.plist in Resources */,
 				1032B43E253771B500D461AF /* LaunchScreen.storyboard in Resources */,
 				1032B43B253771B500D461AF /* Assets.xcassets in Resources */,
 				1032B439253771B000D461AF /* Main.storyboard in Resources */,
@@ -143,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1032B4542538538700D461AF /* Model.swift in Sources */,
+				1032B45025384DE100D461AF /* NetworkLayer.swift in Sources */,
 				1032B44D253786BD00D461AF /* CollectionViewCell.swift in Sources */,
 				1032B4472537792900D461AF /* CollectionViewController.swift in Sources */,
 				1032B432253771B000D461AF /* AppDelegate.swift in Sources */,
