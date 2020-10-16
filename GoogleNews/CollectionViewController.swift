@@ -9,7 +9,6 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate {
 
-    
     @IBOutlet weak var CollectionView: UICollectionView!
     private let collectionViewDataSource = CollectionViewDataSource()
     private let network = NetworkManager.shared
@@ -32,7 +31,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         })
     }
     
- 
     // MARK:- Helper Methods
     
     func showNetworkError() {
@@ -85,8 +83,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let height = collectionView.frame.height/2.65
-        let width  = collectionView.frame.width-20
+        let height = CGFloat(275)
+        var width:CGFloat
+        
+        if collectionView.frame.size.width < 768 {
+            width  = collectionView.frame.width-10
+        } else {
+            width  = collectionView.frame.width/2-20
+        }
+          
+        
+        
         return CGSize(width: width, height: height)
     }
     

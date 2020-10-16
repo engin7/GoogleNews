@@ -30,6 +30,11 @@ extension UIImageView {
         URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
             if error != nil {
                 print(error!)
+                DispatchQueue.main.async {
+                self.image =  #imageLiteral(resourceName: "noImage")
+                self.contentMode = .scaleAspectFit
+                activityIndicator.removeFromSuperview()
+                }
                 return
             }
             
