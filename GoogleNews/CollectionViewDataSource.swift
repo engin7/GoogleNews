@@ -22,7 +22,7 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
         cell.newsHeadline.text = network.news[indexPath.row].title
         cell.newsText.text = network.news[indexPath.row].content
-        cell.source.text = network.news[indexPath.row].source.name
+        cell.source.text = network.news[indexPath.row].source?.name
         cell.newsImageView.loadImageUsingCache(withUrl: network.news[indexPath.row].urlToImage ?? "")
         
         return cell

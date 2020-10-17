@@ -12,8 +12,8 @@ struct Root:  Codable {
 }
 
 struct News: Codable {
-    
-    let source : Source
+ 
+    let source : Source?
     var title          : String?
     var url            : String?
     var publishedAt    : String?
@@ -26,9 +26,9 @@ struct News: Codable {
 //      // API keywords clear enough no need to use CodingKeys
 //    }
     
-    struct Source: Codable {
-        var id: String?
-        var name = ""
-    }
 }
 
+struct Source: Codable {
+    var id: String?
+    var name = ""
+}

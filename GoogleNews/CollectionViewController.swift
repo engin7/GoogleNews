@@ -12,7 +12,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var CollectionView: UICollectionView!
     private let collectionViewDataSource = CollectionViewDataSource()
     private let network = NetworkManager.shared
-     
+    private let db = DatabaseManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Google News"
@@ -22,10 +23,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     
     
     func getHeadlines() {
-        network.getHeadlines(completion: {success in
+        network.getHeadlines(completion: { [self] success in
             if !success {
                 self.showNetworkError()
             } else {
+                db.dbInsert(news: network.news.first)
                 self.CollectionView.reloadData()
             }
         })
