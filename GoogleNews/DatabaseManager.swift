@@ -24,8 +24,7 @@ class DatabaseManager {
     let dbContent = Expression<String?>("content")
     let dbUrl = Expression<String?>("url")
     let dbUrlToImage = Expression<String?>("urlToImage")
-    let dbDate = Expression<Date?>("date")
-    
+ 
     func dbSetup() {
         let databaseFileName = "db.sqlite3"
         let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
@@ -36,8 +35,7 @@ class DatabaseManager {
             t.column(dbContent)
             t.column(dbUrl)
             t.column(dbUrlToImage)
-            t.column(dbDate)
-        })
+         })
         
     }
 
@@ -45,8 +43,8 @@ class DatabaseManager {
         //inserting/updating data to the sqlite database
         do {
             for news in allNews {
-                let rowid = try db!.run(tblNews.insert(or: .replace, dbTitle <- news.title,dbContent <- news.content, dbUrl <- news.url, dbUrlToImage <- news.urlToImage))
-                print("Row inserted successfully id: \(rowid)")
+                _ = try db!.run(tblNews.insert(or: .replace, dbTitle <- news.title,dbContent <- news.content, dbUrl <- news.url, dbUrlToImage <- news.urlToImage))
+//                print("Row inserted successfully id: \(rowid)")
              }
         } catch {
             print("insertion failed: \(error)")

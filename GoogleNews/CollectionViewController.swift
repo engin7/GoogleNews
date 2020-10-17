@@ -18,8 +18,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Google News"
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        CollectionView.refreshControl = refreshControl
         CollectionView.dataSource = collectionViewDataSource
         getHeadlines()
+    }
+    
+    
+    @objc func refresh(refreshControl: UIRefreshControl) {
+        self.CollectionView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     func getHeadlines() {
@@ -27,7 +36,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
             if !success {
                 self.showNetworkError()
             } else {
-                db.dbRemoveAll() //clear older news
+                db.dbRemoveAll() //clear older news if exist
                 db.dbInsert(allNews: network.news) //fetch network results to db
                 db.dbLoad() // load data from db to newsArray
                 self.CollectionView.reloadData()
@@ -52,38 +61,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
 }
 
     // MARK: UICollectionViewDelegate
- 
-    
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
- 
+  
+  
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
