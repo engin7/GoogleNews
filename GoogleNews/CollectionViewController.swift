@@ -13,8 +13,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     private let collectionViewDataSource = CollectionViewDataSource()
     private let network = NetworkManager.shared
     private let db = DatabaseManager.sharedInstance
-    private let defaults = UserDefaults.standard
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Google News"
@@ -25,12 +24,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         getHeadlines()
     }
     
-    
     @objc func refresh(refreshControl: UIRefreshControl) {
         self.CollectionView.reloadData()
         refreshControl.endRefreshing()
     }
     
+  
     func getHeadlines() {
         network.getHeadlines(completion: { [self] success in
             if !success {
@@ -58,11 +57,20 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         present(alert, animated: true, completion: nil)
     }
  
-}
-
     // MARK: UICollectionViewDelegate
-  
-  
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let urlPath = db.newsArray[indexPath.row].url {
+            let url = URL(string: urlPath)!
+            let identifier = String(describing: WKWebViewController.self)
+            let vc = storyboard?.instantiateViewController(withIdentifier: identifier) as! WKWebViewController
+            vc.url = url
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+}
+    
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -74,9 +82,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         } else {
             width  = collectionView.frame.width/2-10
         }
-          
-        
-        
+     
         return CGSize(width: width, height: height)
     }
     

@@ -21,6 +21,7 @@
 		1032B45E2538BF7800D461AF /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B45D2538BF7800D461AF /* UIImageViewExtension.swift */; };
 		1032B462253A024800D461AF /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 1032B461253A024800D461AF /* SQLite */; };
 		1032B465253A065900D461AF /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B464253A065800D461AF /* DatabaseManager.swift */; };
+		1032B46B253B652E00D461AF /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1032B46A253B652E00D461AF /* WKWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		1032B45A2538B68700D461AF /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		1032B45D2538BF7800D461AF /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		1032B464253A065800D461AF /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		1032B46A253B652E00D461AF /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				1032B464253A065800D461AF /* DatabaseManager.swift */,
 				1032B45D2538BF7800D461AF /* UIImageViewExtension.swift */,
 				1032B4532538538700D461AF /* Model.swift */,
+				1032B46A253B652E00D461AF /* WKWebViewController.swift */,
 				1032B4462537792900D461AF /* CollectionViewController.swift */,
 				1032B449253779AB00D461AF /* CollectionViewDataSource.swift */,
 				1032B44C253786BD00D461AF /* CollectionViewCell.swift */,
@@ -172,6 +175,7 @@
 				1032B45025384DE100D461AF /* NetworkLayer.swift in Sources */,
 				1032B44D253786BD00D461AF /* CollectionViewCell.swift in Sources */,
 				1032B4472537792900D461AF /* CollectionViewController.swift in Sources */,
+				1032B46B253B652E00D461AF /* WKWebViewController.swift in Sources */,
 				1032B432253771B000D461AF /* AppDelegate.swift in Sources */,
 				1032B434253771B000D461AF /* SceneDelegate.swift in Sources */,
 				1032B45E2538BF7800D461AF /* UIImageViewExtension.swift in Sources */,
