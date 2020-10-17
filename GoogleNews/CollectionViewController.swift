@@ -27,7 +27,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
             if !success {
                 self.showNetworkError()
             } else {
-                db.dbInsert(news: network.news.first)
+                db.dbRemoveAll()
+                db.dbInsert(allNews: network.news)
+                db.dbLoad()
                 self.CollectionView.reloadData()
             }
         })
@@ -85,7 +87,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let height = CGFloat(275)
+        let height = CGFloat(320)
         var width:CGFloat
         
         if collectionView.frame.size.width < 768 {

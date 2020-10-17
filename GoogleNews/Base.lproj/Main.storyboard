@@ -28,26 +28,26 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="nHL-RC-SnM" customClass="CollectionViewCell" customModule="GoogleNews" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="10" width="296" height="257"/>
+                                        <rect key="frame" x="5" y="10" width="296" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nld-me-eYo">
-                                            <rect key="frame" x="0.0" y="0.0" width="296" height="257"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="296" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1mv-HV-Ek5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="296" height="130"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="296" height="175"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="130" id="pVa-MG-KX2"/>
+                                                        <constraint firstAttribute="height" constant="175" id="pVa-MG-KX2"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsText" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25V-I7-K0S">
-                                                    <rect key="frame" x="0.0" y="192" width="296" height="49"/>
+                                                    <rect key="frame" x="0.0" y="237" width="296" height="67"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="les pratiques agricoles  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vad-wB-MP7">
-                                                    <rect key="frame" x="16" y="144" width="264" height="44"/>
+                                                    <rect key="frame" x="16" y="189" width="264" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="lC0-b2-inF"/>
                                                     </constraints>
@@ -56,7 +56,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcf-OT-GaS">
-                                                    <rect key="frame" x="257" y="241" width="31" height="16"/>
+                                                    <rect key="frame" x="257" y="304" width="31" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                                 <constraint firstItem="25V-I7-K0S" firstAttribute="top" secondItem="vad-wB-MP7" secondAttribute="bottom" constant="4" id="yKS-s0-cfW"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="296" height="257"/>
+                                        <size key="customSize" width="296" height="320"/>
                                         <connections>
                                             <outlet property="newsHeadline" destination="vad-wB-MP7" id="HHl-wL-neI"/>
                                             <outlet property="newsImageView" destination="1mv-HV-Ek5" id="qF7-RN-1AT"/>

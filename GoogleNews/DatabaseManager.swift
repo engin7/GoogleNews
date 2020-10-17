@@ -40,11 +40,13 @@ class DatabaseManager {
         })
     }
     
-    func dbInsert(news: News?) {
+    func dbInsert(allNews: [News]) {
         //inserting/updating data to the sqlite database
         do {
-            let rowid = try db!.run(tblNews.insert(or: .replace, dbTitle <- news?.title,dbContent <- news?.content, dbUrl <- news?.url, dbUrlToImage <- news?.urlToImage))
-            print("Row inserted successfully id: \(rowid)")
+            for news in allNews {
+                let rowid = try db!.run(tblNews.insert(or: .replace, dbTitle <- news.title,dbContent <- news.content, dbUrl <- news.url, dbUrlToImage <- news.urlToImage))
+                print("Row inserted successfully id: \(rowid)")
+            }
         } catch {
             print("insertion failed: \(error)")
         }
@@ -67,7 +69,7 @@ class DatabaseManager {
         
         do{
             for article in try db!.prepare(tblNews) {
-                print("title: \(article[dbTitle]), content: \(article[dbContent]), url: \(article[dbUrl])")
+                print("title: \(String(describing: article[dbTitle])), content: \(String(describing: article[dbContent])), url: \(String(describing: article[dbUrl]))")
                 let source = Source()
                 var tempNews = News(source: source)
                 tempNews.title=article[dbTitle]
@@ -75,7 +77,7 @@ class DatabaseManager {
                 tempNews.url=article[dbUrl]
                 
                 newsArray.append(tempNews)
-                 
+//                 print(newsArray)
             }
         }
         catch {
