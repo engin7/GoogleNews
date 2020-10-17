@@ -11,11 +11,9 @@ import SQLite
 
 class DatabaseManager {
     
-     static let sharedInstance = DatabaseManager() //singleton
-    
+    static let sharedInstance = DatabaseManager() //singleton
     var newsArray = [News]()
-
-    // Private initializer to avoid instancing by other classes
+     // Private initializer to avoid instancing by other classes
     private init() {
         dbSetup()
     }
@@ -26,7 +24,8 @@ class DatabaseManager {
     let dbContent = Expression<String?>("content")
     let dbUrl = Expression<String?>("url")
     let dbUrlToImage = Expression<String?>("urlToImage")
- 
+    let dbDate = Expression<Date?>("date")
+    
     func dbSetup() {
         let databaseFileName = "db.sqlite3"
         let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
@@ -37,16 +36,18 @@ class DatabaseManager {
             t.column(dbContent)
             t.column(dbUrl)
             t.column(dbUrlToImage)
+            t.column(dbDate)
         })
+        
     }
-    
+
     func dbInsert(allNews: [News]) {
         //inserting/updating data to the sqlite database
         do {
             for news in allNews {
                 let rowid = try db!.run(tblNews.insert(or: .replace, dbTitle <- news.title,dbContent <- news.content, dbUrl <- news.url, dbUrlToImage <- news.urlToImage))
                 print("Row inserted successfully id: \(rowid)")
-            }
+             }
         } catch {
             print("insertion failed: \(error)")
         }
@@ -69,15 +70,13 @@ class DatabaseManager {
         
         do{
             for article in try db!.prepare(tblNews) {
-                print("title: \(String(describing: article[dbTitle])), content: \(String(describing: article[dbContent])), url: \(String(describing: article[dbUrl]))")
                 let source = Source()
                 var tempNews = News(source: source)
-                tempNews.title=article[dbTitle]
-                tempNews.content=article[dbContent]
-                tempNews.url=article[dbUrl]
-                
+                tempNews.title = article[dbTitle]
+                tempNews.content = article[dbContent]
+                tempNews.url = article[dbUrl]
+                tempNews.urlToImage = article[dbUrlToImage]
                 newsArray.append(tempNews)
-//                 print(newsArray)
             }
         }
         catch {

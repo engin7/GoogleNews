@@ -13,7 +13,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     private let collectionViewDataSource = CollectionViewDataSource()
     private let network = NetworkManager.shared
     private let db = DatabaseManager.sharedInstance
-    
+    private let defaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Google News"
@@ -21,15 +22,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         getHeadlines()
     }
     
-    
     func getHeadlines() {
         network.getHeadlines(completion: { [self] success in
             if !success {
                 self.showNetworkError()
             } else {
-                db.dbRemoveAll()
-                db.dbInsert(allNews: network.news)
-                db.dbLoad()
+                db.dbRemoveAll() //clear older news
+                db.dbInsert(allNews: network.news) //fetch network results to db
+                db.dbLoad() // load data from db to newsArray
                 self.CollectionView.reloadData()
             }
         })

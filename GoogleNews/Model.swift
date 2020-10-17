@@ -23,7 +23,7 @@ struct News: Codable {
     var urlToImage     : String?
 
 //    enum CodingKeys: String, CodingKey {
-//      // API keywords clear enough no need to use CodingKeys
+//      // API keywords clear enough, no need to use CodingKeys
 //    }
     
 }

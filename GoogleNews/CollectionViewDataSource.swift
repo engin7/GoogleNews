@@ -9,21 +9,20 @@ import UIKit
 
 class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
-    private let network = NetworkManager.shared
+     private let db = DatabaseManager.sharedInstance
 
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return network.news.count
+        return db.newsArray.count
     }
      
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
     
-        cell.newsHeadline.text = network.news[indexPath.row].title
-        cell.newsText.text = network.news[indexPath.row].content
-        cell.source.text = network.news[indexPath.row].source?.name
-        cell.newsImageView.loadImageUsingCache(withUrl: network.news[indexPath.row].urlToImage ?? "")
+        cell.newsHeadline.text = db.newsArray[indexPath.row].title
+        cell.newsText.text = db.newsArray[indexPath.row].content
+        cell.source.text = db.newsArray[indexPath.row].source?.name
+        cell.newsImageView.loadImageUsingCache(withUrl: db.newsArray[indexPath.row].urlToImage ?? "")
         
         return cell
     }
