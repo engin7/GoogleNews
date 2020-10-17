@@ -93,7 +93,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         if collectionView.frame.size.width < 768 {
             width  = collectionView.frame.width-10
         } else {
-            width  = collectionView.frame.width/2-20
+            width  = collectionView.frame.width/2-10
         }
           
         

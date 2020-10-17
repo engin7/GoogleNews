@@ -41,7 +41,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewsText" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25V-I7-K0S">
-                                                    <rect key="frame" x="0.0" y="237" width="296" height="67"/>
+                                                    <rect key="frame" x="10" y="237" width="276" height="67"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -68,13 +68,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="1mv-HV-Ek5" secondAttribute="trailing" id="6Qb-hO-5N3"/>
                                                 <constraint firstItem="jcf-OT-GaS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nld-me-eYo" secondAttribute="leading" constant="20" symbolic="YES" id="Fas-8A-m9g"/>
                                                 <constraint firstItem="vad-wB-MP7" firstAttribute="top" secondItem="1mv-HV-Ek5" secondAttribute="bottom" constant="14" id="N17-kT-cbh"/>
-                                                <constraint firstItem="25V-I7-K0S" firstAttribute="trailing" secondItem="1mv-HV-Ek5" secondAttribute="trailing" id="P70-Zu-IVe"/>
+                                                <constraint firstItem="25V-I7-K0S" firstAttribute="trailing" secondItem="1mv-HV-Ek5" secondAttribute="trailing" constant="-10" id="P70-Zu-IVe"/>
                                                 <constraint firstAttribute="trailing" secondItem="jcf-OT-GaS" secondAttribute="trailing" constant="8" id="QcL-8h-FSI"/>
                                                 <constraint firstAttribute="bottom" secondItem="25V-I7-K0S" secondAttribute="bottom" constant="16" id="WG3-qI-3IL"/>
                                                 <constraint firstItem="1mv-HV-Ek5" firstAttribute="top" secondItem="Nld-me-eYo" secondAttribute="top" id="c77-1e-TLA"/>
                                                 <constraint firstAttribute="bottom" secondItem="jcf-OT-GaS" secondAttribute="bottom" id="jqm-2m-HJv"/>
                                                 <constraint firstItem="vad-wB-MP7" firstAttribute="leading" secondItem="Nld-me-eYo" secondAttribute="leading" constant="16" id="rDb-MB-mxv"/>
-                                                <constraint firstItem="25V-I7-K0S" firstAttribute="leading" secondItem="1mv-HV-Ek5" secondAttribute="leading" id="wdf-SN-HBb"/>
+                                                <constraint firstItem="25V-I7-K0S" firstAttribute="leading" secondItem="1mv-HV-Ek5" secondAttribute="leading" constant="10" id="wdf-SN-HBb"/>
                                                 <constraint firstItem="1mv-HV-Ek5" firstAttribute="leading" secondItem="Nld-me-eYo" secondAttribute="leading" id="xfI-bA-Mc0"/>
                                                 <constraint firstItem="25V-I7-K0S" firstAttribute="top" secondItem="vad-wB-MP7" secondAttribute="bottom" constant="4" id="yKS-s0-cfW"/>
                                             </constraints>
