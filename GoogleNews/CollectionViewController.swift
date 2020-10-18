@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SafariServices
+
 
 class MainViewController: UIViewController, UICollectionViewDelegate {
 
@@ -62,19 +64,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let urlPath = db.newsArray[indexPath.row].url {
             let url = URL(string: urlPath)!
-            let identifier = String(describing: WKWebViewController.self)
-            let vc = storyboard?.instantiateViewController(withIdentifier: identifier) as! WKWebViewController
-            vc.url = url
-            vc.title = url.host
-
-            let transition = CATransition()
-            transition.duration = 0.6
-            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-            transition.type = CATransitionType.moveIn
-            transition.subtype = CATransitionSubtype.fromTop
-            self.navigationController?.view.layer.add(transition, forKey: nil)
-            navigationController?.pushViewController(vc, animated: false)
-        }
+            
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            vc.modalTransitionStyle = .partialCurl
+            present(vc, animated: true)
+         }
     }
     
 }

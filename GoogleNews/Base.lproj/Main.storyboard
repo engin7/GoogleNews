@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="he4-zb-JRJ">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="Pin-9K-0eQ" customClass="MainViewController" customModule="GoogleNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Zr-ie-TVw">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C2r-bR-AoQ">
-                                <rect key="frame" x="0.0" y="50" width="768" height="974"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sUx-bI-vXc">
                                     <size key="itemSize" width="296" height="257"/>
@@ -28,7 +28,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="nHL-RC-SnM" customClass="CollectionViewCell" customModule="GoogleNews" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="10" width="296" height="320"/>
+                                        <rect key="frame" x="59" y="10" width="296" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nld-me-eYo">
                                             <rect key="frame" x="0.0" y="0.0" width="296" height="320"/>
@@ -111,54 +111,13 @@
             </objects>
             <point key="canvasLocation" x="255" y="44.366197183098592"/>
         </scene>
-        <!--Web View Controller-->
-        <scene sceneID="ogQ-dm-yJo">
-            <objects>
-                <viewController storyboardIdentifier="WKWebViewController" id="a0c-K5-AMV" customClass="WKWebViewController" customModule="GoogleNews" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WCL-CB-Jmz">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0b-Bl-6pc">
-                                <rect key="frame" x="0.0" y="50" width="768" height="974"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="inY-2q-LwZ">
-                                <rect key="frame" x="374" y="502" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="eky-M7-uOK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="eky-M7-uOK" firstAttribute="trailing" secondItem="g0b-Bl-6pc" secondAttribute="trailing" id="1e1-SP-ptV"/>
-                            <constraint firstItem="g0b-Bl-6pc" firstAttribute="leading" secondItem="eky-M7-uOK" secondAttribute="leading" id="9mL-J2-6gu"/>
-                            <constraint firstItem="eky-M7-uOK" firstAttribute="bottom" secondItem="g0b-Bl-6pc" secondAttribute="bottom" id="A0Q-L5-hGG"/>
-                            <constraint firstItem="inY-2q-LwZ" firstAttribute="centerX" secondItem="WCL-CB-Jmz" secondAttribute="centerX" id="S2U-i1-ms7"/>
-                            <constraint firstItem="inY-2q-LwZ" firstAttribute="centerY" secondItem="WCL-CB-Jmz" secondAttribute="centerY" id="wpc-E7-dQ1"/>
-                            <constraint firstItem="g0b-Bl-6pc" firstAttribute="top" secondItem="eky-M7-uOK" secondAttribute="top" id="xfT-0V-hca"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="6SZ-Jo-j5S"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="inY-2q-LwZ" id="jJF-BA-fVe"/>
-                        <outlet property="webView" destination="g0b-Bl-6pc" id="WKO-X0-rhX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4f2-Hm-HPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1898.4375" y="41.6015625"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WQX-zo-vK0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="he4-zb-JRJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0kj-WC-UzC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -169,25 +128,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4r-Ch-FRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-744.375" y="43.309859154929576"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Dne-67-SnN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="734-BC-Gac" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Bqz-d4-kjC"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i9c-FM-g3B">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="a0c-K5-AMV" kind="relationship" relationship="rootViewController" id="x9Y-Fc-Ekg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b67-bl-HRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1132.8125" y="41.6015625"/>
         </scene>
     </scenes>
     <resources>
