@@ -8,7 +8,7 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var newsHeadline: UILabel!
     @IBOutlet weak var newsText: UILabel!
@@ -24,7 +24,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-         
+        
     }
     
 }

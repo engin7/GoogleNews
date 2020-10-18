@@ -72,22 +72,30 @@
 		1032B430253771B000D461AF /* GoogleNews */ = {
 			isa = PBXGroup;
 			children = (
-				1032B431253771B000D461AF /* AppDelegate.swift */,
-				1032B433253771B000D461AF /* SceneDelegate.swift */,
-				1032B44F25384DE100D461AF /* NetworkLayer.swift */,
-				1032B464253A065800D461AF /* DatabaseManager.swift */,
-				1032B45D2538BF7800D461AF /* UIImageViewExtension.swift */,
-				1032B4532538538700D461AF /* Model.swift */,
-				1032B4462537792900D461AF /* CollectionViewController.swift */,
-				1032B449253779AB00D461AF /* CollectionViewDataSource.swift */,
-				1032B44C253786BD00D461AF /* CollectionViewCell.swift */,
-				1032B437253771B000D461AF /* Main.storyboard */,
-				1032B43A253771B500D461AF /* Assets.xcassets */,
-				1032B43C253771B500D461AF /* LaunchScreen.storyboard */,
 				1032B43F253771B500D461AF /* Info.plist */,
 				1032B45A2538B68700D461AF /* keys.plist */,
+				1032B431253771B000D461AF /* AppDelegate.swift */,
+				1032B433253771B000D461AF /* SceneDelegate.swift */,
+				1032B43C253771B500D461AF /* LaunchScreen.storyboard */,
+				1032B437253771B000D461AF /* Main.storyboard */,
+				1032B43A253771B500D461AF /* Assets.xcassets */,
+				1032B46F253C241200D461AF /* Managers */,
+				1032B45D2538BF7800D461AF /* UIImageViewExtension.swift */,
+				1032B4532538538700D461AF /* Model.swift */,
+				1032B44C253786BD00D461AF /* CollectionViewCell.swift */,
+				1032B449253779AB00D461AF /* CollectionViewDataSource.swift */,
+				1032B4462537792900D461AF /* CollectionViewController.swift */,
 			);
 			path = GoogleNews;
+			sourceTree = "<group>";
+		};
+		1032B46F253C241200D461AF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1032B44F25384DE100D461AF /* NetworkLayer.swift */,
+				1032B464253A065800D461AF /* DatabaseManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
