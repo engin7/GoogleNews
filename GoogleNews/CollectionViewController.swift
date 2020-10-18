@@ -64,15 +64,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let urlPath = db.newsArray[indexPath.row].url {
             let url = URL(string: urlPath)!
-            
             let config = SFSafariViewController.Configuration()
             config.entersReaderIfAvailable = true
             let vc = SFSafariViewController(url: url, configuration: config)
-            vc.modalTransitionStyle = .partialCurl
+            // animation
+            vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
          }
     }
-    
 }
     
 extension MainViewController: UICollectionViewDelegateFlowLayout {
