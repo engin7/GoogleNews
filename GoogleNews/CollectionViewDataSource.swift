@@ -1,6 +1,6 @@
 //
 //  CollectionViewDataSource.swift
-//  GoogleNews/ViewModel
+//   
 //
 //  Created by Engin KUK on 14.10.2020.
 //
