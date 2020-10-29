@@ -3,7 +3,7 @@
 ## About
 
   GoogleNews is an iOS app which connects to https://newsapi.org/ API and show users top headlines. 
-  User can click on news to read the article.  
+  <br/>User can click on news to read the article.  
   
   “Codable” protocol used for data serialization. Data returned from API inserted to SQLite Database.
   CollectionView cells loaded via database. CollectionView shows two columns for ipad for better user experience.
